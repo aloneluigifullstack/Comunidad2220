@@ -2,39 +2,41 @@
 import { useEffect, useState } from "react";
 import "./Hero.css";
 
+
 const imagenes = [
-    "/images/comunidad1.jpg",
-    "/images/comunidad2.jpg",
-    "/images/comunidad3.jpg",
-    "/images/comunidad4.jpg",
-    "/images/comunidad5.jpg",
-     "/images/comunidad6.jpg",
-    "/images/comunidad7.jpg",
-    "/images/comunidad8.jpg",
-    "/images/comunidad9.jpg",
-    "/images/comunidad10.jpg",
-     "/images/comunidad11.jpg",
-    "/images/comunidad12.jpg",
-    "/images/comunidad13.jpg",
-    "/images/comunidad14.jpeg",
-    "/images/comunidad15.jpeg",
-     "/images/comunidad16.JPG",
-    "/images/comunidad17.JPG",
-    "/images/comunidad18.JPG",
-    "/images/comunidad19.jpg",
-    "/images/comunidad20.jpg",
-     "/images/comunidad21.jpeg",
-    "/images/comunidad22.jpg",
-    "/images/comunidad23.jpg",
-    "/images/comunidad24.jpg",
-    "/images/comunidad25.jpg",
-     "/images/comunidad26.jpg",
-    "/images/comunidad27.jpg",
-    "/images/comunidad28.jpg",
-    "/images/comunidad29.jpg",
-    "/images/comunidad30.jpg",
-    "/images/comunidad31.JPG",
-];
+    "comunidad1.jpg",
+    "comunidad2.jpg",
+    "comunidad3.jpg",
+    "comunidad4.jpg",
+    "comunidad5.jpg",
+    "comunidad6.jpg",
+    "comunidad7.jpg",
+    "comunidad8.jpg",
+    "comunidad9.jpg",
+    "comunidad10.jpg",
+    "comunidad11.jpg",
+    "comunidad12.jpg",
+    "comunidad13.jpg",
+    "comunidad14.jpeg",
+    "comunidad15.jpeg",
+    "comunidad16.JPG",
+    "comunidad17.JPG",
+    "comunidad18.JPG",
+    "comunidad19.jpg",
+    "comunidad20.jpg",
+    "comunidad21.jpeg",
+    "comunidad22.jpg",
+    "comunidad23.jpg",
+    "comunidad24.jpg",
+    "comunidad25.jpg",
+    "comunidad26.jpg",
+    "comunidad27.jpg",
+    "comunidad28.jpg",
+    "comunidad29.jpg",
+    "comunidad30.jpg",
+    "comunidad31.JPG",
+].map((nombre) => `${import.meta.env.BASE_URL}images/${nombre}`);
+
 
 export default function Hero() {
     const [imagenActual, setImagenActual] = useState(0);
@@ -61,7 +63,7 @@ export default function Hero() {
                 />
             ))} </div>
 
-    
+
         {/* Capa oscura para mejorar la lectura */}
         <div className="hero-overlay" />
 
@@ -70,13 +72,13 @@ export default function Hero() {
             <span className="hero-etiqueta">COMUNIDAD 2220</span>
 
             <h1>
-                Jesús, el que da testimonio de que estas palabras son ciertas, 
+                Jesús, el que da testimonio de que estas palabras son ciertas,
                 <br />
                 dice: «Sí, vengo pronto».<span> Así sea. ¡Ven, Señor Jesús!</span>
                 <br />
                 Ap. 22 : 20
             </h1>
-          
+
 
             <div className="hero-botones">
                 <a href="#formacion" className="btn-dorado">
