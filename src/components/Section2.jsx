@@ -10,7 +10,7 @@ const eventos = [
     mes: "OCT",
     titulo: "Seminario Bíblico",
     categoria: "Formación teológica",
-    imagen: "/images/seminario.png",
+    imagen: `${import.meta.env.BASE_URL}/images/seminario.png`,
     modalidad: "Presencial",
   },
   {
@@ -18,7 +18,7 @@ const eventos = [
     mes: "OCT",
     titulo: "Taller de liderazgo",
     categoria: "Capacitación y servicio",
-    imagen: "/images/liderazgo.jpg",
+    imagen: `${import.meta.env.BASE_URL}/images/liderazgo.jpg`,
     modalidad: "Presencial",
   },
   {
@@ -26,7 +26,7 @@ const eventos = [
     mes: "OCT",
     titulo: "Noche de Adoración",
     categoria: "Banda Comunidad",
-    imagen: "/images/adoracion.jpg",
+    imagen: `${import.meta.env.BASE_URL}/images/adoracion.jpg`,
     modalidad: "En vivo",
   },
 ];

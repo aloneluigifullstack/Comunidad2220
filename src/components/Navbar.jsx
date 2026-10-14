@@ -32,8 +32,8 @@ export default function Navbar() {
             onClick={cerrarMenu}
         >
             <img
-                src="/images/logocomunidad1.png"
-                alt="Comunidad 2220"
+                src={`${import.meta.env.BASE_URL}images/logocomunidad1.png`}
+                alt="Logo Comunidad 2220"
             />
         </Link>
 
@@ -107,9 +107,9 @@ export default function Navbar() {
                     <FaTiktok />
                 </a>
 
-                <a 
+                <a
                     href="https://www.youtube.com/@BandaComunidad"
-                    target="_blank" 
+                    target="_blank"
                     rel="noopener noreferrer"
                     aria-label="YouTube"
                 >

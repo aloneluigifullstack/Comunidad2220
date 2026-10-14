@@ -12,7 +12,7 @@ const areas = [
     titulo: "Formación teológica",
     descripcion:
       "Estudia, profundiza y aplica la Palabra de Dios en tu vida.",
-    imagen: "/images/formacionteologica.jpeg",
+    imagen: `${import.meta.env.BASE_URL}images/formacionteologica.jpeg`,
     icono: <FaBookOpen />,
     enlace: "#eventos",
   },
@@ -21,7 +21,7 @@ const areas = [
     titulo: "Capacitación y servicio",
     descripcion:
       "Desarrolla tus talentos y sé parte del cambio en tu entorno.",
-    imagen: "/images/capacitacion.jpg",
+    imagen: `${import.meta.env.BASE_URL}/images/capacitacion.jpg`,
     icono: <FaUsers />,
     enlace: "#contacto",
   },
@@ -30,7 +30,7 @@ const areas = [
     titulo: "Banda Comunidad",
     descripcion:
       "Música, adoración y una misión que nos une.",
-    imagen: "/images/bandacomunidad.jpg",
+    imagen: `${import.meta.env.BASE_URL}/images/bandacomunidad.jpg`,
     icono: <FaMusic />,
     enlace: "#contacto",
   },
