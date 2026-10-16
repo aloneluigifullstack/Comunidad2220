@@ -1,0 +1,823 @@
+/* =========================================
+   CAPACITACIÓN Y SERVICIO
+   COMUNIDAD 2220
+========================================= */
+
+.pagina-cys {
+  --cys-marron: #0064b2;
+  --cys-marron-claro: #482719;
+  --cys-dorado: #f59c1f;
+  --cys-blanco: #ffffff;
+  --cys-texto: #594b47;
+  --cys-borde: rgba(166, 125, 35, 0.25);
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--cys-blanco);
+  color: var(--cys-marron);
+  font-family: inherit;
+}
+
+/* =========================================
+   BANNER PRINCIPAL
+========================================= */
+
+.cys-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 420px;
+  padding: 45px 7%;
+  overflow: hidden;
+  background: var(--cys-blanco);
+}
+
+.cys-fondo {
+  position: absolute;
+  z-index: -2;
+  inset: 38% 0 0;
+  background: var(--cys-marron);
+}
+
+/* Panel lateral */
+
+.cys-lateral {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 5%;
+  width: 25%;
+  height: 52%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: var(--cys-marron);
+  border-radius: 80px 100px 0 0;
+  color: var(--cys-blanco);
+}
+
+.cys-lateral h2 {
+  margin: 0;
+  font-size: clamp(48px, 6vw, 82px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+/* Flecha del panel */
+
+.cys-flecha {
+  width: 48%;
+  max-width: 135px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--cys-blanco);
+  border-radius: 50px;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cys-flecha span {
+  position: relative;
+  width: 40%;
+  height: 2px;
+  background: var(--cys-blanco);
+}
+
+.cys-flecha span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--cys-blanco);
+  border-right: 2px solid var(--cys-blanco);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.cys-flecha:hover {
+  background: rgba(255, 255, 255, 0.13);
+  transform: translateX(4px);
+}
+
+/* Logo circular */
+
+.cys-logo-marco {
+  position: absolute;
+  z-index: 2;
+  top: 3%;
+  right: 9%;
+  width: min(36%, 390px);
+  aspect-ratio: 1;
+  padding: 7px;
+  border: 6px solid var(--cys-blanco);
+  border-radius: 50%;
+  background: var(--cys-marron-claro);
+  box-shadow: 0 12px 0 var(--cys-marron-claro);
+}
+
+.cys-logo-circulo {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--cys-marron);
+}
+
+.cys-logo-circulo img {
+  display: block;
+  width: 114%;
+  height: 101%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  transform: translateX(-30px);
+}
+
+/* Texto del banner */
+
+.cys-texto {
+  position: relative;
+  z-index: 4;
+  width: 52%;
+  max-width: 500px;
+  margin-top: 150px;
+  color: var(--cys-blanco);
+}
+
+.cys-etiqueta {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--cys-dorado);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.cys-texto h1 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 3.4vw, 45px);
+  line-height: 1.08;
+  font-weight: 850;
+}
+
+.cys-texto p {
+  max-width: 420px;
+  margin: 0 0 18px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Botón del banner */
+
+.cys-boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  padding: 10px 17px;
+  border: 1.5px solid var(--cys-dorado);
+  border-radius: 5px;
+  color: var(--cys-blanco);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.cys-boton svg {
+  color: var(--cys-dorado);
+  transition: transform 0.3s ease;
+}
+
+.cys-boton:hover {
+  background: var(--cys-dorado);
+  color: var(--cys-marron);
+}
+
+.cys-boton:hover svg {
+  color: var(--cys-marron);
+  transform: translate(3px, -3px);
+}
+
+/* Texto decorativo */
+
+.cys-decoracion {
+  position: absolute;
+  z-index: 3;
+  right: 8%;
+  bottom: 5%;
+  color: var(--cys-dorado);
+  font-size: clamp(15px, 2vw, 25px);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
+
+.cys-contenido {
+  padding: 75px 7% 65px;
+  background:
+    radial-gradient(ellipse at top, rgba(230, 173, 22, 0.055), transparent 65%),
+    #ffffff;
+}
+
+.cys-intro {
+  width: min(100%, 850px);
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.cys-subtitulo {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #a57909;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.cys-intro h2,
+.cys-areas-encabezado h2 {
+  margin: 0 0 16px;
+  color: var(--cys-marron);
+  font-size: clamp(29px, 4vw, 43px);
+  font-weight: 850;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+}
+
+.cys-descripcion {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #716766;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   BENEFICIOS TRANSPARENTES
+========================================= */
+
+.cys-lista-beneficios {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.cys-beneficio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 92px;
+  padding: 17px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--cys-borde);
+  border-radius: 13px;
+  color: var(--cys-texto);
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cys-beneficio::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18%;
+  width: 3px;
+  height: 64%;
+  background: var(--cys-dorado);
+  border-radius: 0 5px 5px 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cys-beneficio-icono {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(211, 164, 44, 0.25);
+  border-radius: 12px;
+  color: #a57909;
+  background: rgba(211, 164, 44, 0.1);
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cys-beneficio-texto {
+  flex: 1;
+  color: #554441;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+.cys-beneficio-flecha {
+  flex-shrink: 0;
+  color: #b18a29;
+  opacity: 0.65;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.cys-beneficio:hover {
+  background: #ffffff;
+  border-color: #c49a34;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(39, 3, 3, 0.07);
+}
+
+.cys-beneficio:hover::before {
+  opacity: 1;
+}
+
+.cys-beneficio:hover .cys-beneficio-icono {
+  color: #ffffff;
+  background: var(--cys-marron-claro);
+  transform: scale(1.05);
+}
+
+.cys-beneficio:hover .cys-beneficio-flecha {
+  opacity: 1;
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   ÁREAS Y TARJETAS
+========================================= */
+
+.cys-areas {
+  width: min(100%, 1150px);
+  margin: 0 auto;
+}
+
+.cys-areas-encabezado {
+  max-width: 650px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.cys-areas-encabezado h2 {
+  margin-bottom: 12px;
+}
+
+.cys-areas-encabezado p {
+  margin: 0;
+  color: #716766;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.cys-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.cys-tarjeta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 27px 23px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #e8e0d9;
+  border-top: 3px solid var(--cys-dorado);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(39, 3, 3, 0.025);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.cys-tarjeta:hover {
+  transform: translateY(-6px);
+  border-color: rgba(181, 138, 41, 0.55);
+  box-shadow: 0 18px 35px rgba(39, 3, 3, 0.09);
+}
+
+.cys-numero {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  color: rgba(181, 138, 41, 0.18);
+  font-size: 35px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.cys-tarjeta-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 23px;
+  color: #a57909;
+  background: rgba(211, 164, 44, 0.1);
+  border: 1px solid rgba(211, 164, 44, 0.2);
+  border-radius: 14px;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease;
+}
+
+.cys-tarjeta:hover .cys-tarjeta-icono {
+  color: #ffffff;
+  background: var(--cys-marron-claro);
+}
+
+.cys-tarjeta h3 {
+  margin: 0 0 12px;
+  color: var(--cys-marron);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.cys-tarjeta p {
+  flex: 1;
+  margin: 0 0 22px;
+  color: #716766;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.cys-enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(181, 138, 41, 0.5);
+  color: var(--cys-marron);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.cys-enlace svg {
+  color: #a57909;
+}
+
+.cys-enlace:hover {
+  gap: 14px;
+  color: #a57909;
+}
+
+/* =========================================
+   LLAMADO A LA ACCIÓN
+========================================= */
+
+.cys-llamado {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: min(100%, 1150px);
+  margin: 65px auto 0;
+  padding: 30px;
+  color: var(--cys-blanco);
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(230, 173, 22, 0.15),
+      transparent 45%
+    ),
+    var(--cys-marron);
+  border: 1px solid rgba(230, 173, 22, 0.35);
+  border-radius: 16px;
+}
+
+.cys-llamado-icono {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  color: var(--cys-dorado);
+  border: 1px solid rgba(230, 173, 22, 0.5);
+  border-radius: 16px;
+  background: rgba(230, 173, 22, 0.08);
+}
+
+.cys-llamado-texto {
+  flex: 1;
+}
+
+.cys-llamado-texto > span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--cys-dorado);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.cys-llamado-texto h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: clamp(19px, 2.4vw, 27px);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.cys-llamado-texto p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.cys-llamado-boton {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 16px;
+  color: var(--cys-marron);
+  background: var(--cys-dorado);
+  border: 1px solid var(--cys-dorado);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.cys-llamado-boton:hover {
+  color: var(--cys-blanco);
+  background: transparent;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+  .cys-hero {
+    min-height: 390px;
+    padding: 35px 5%;
+  }
+
+  .cys-lateral {
+    width: 25%;
+    height: 45%;
+  }
+
+  .cys-lateral h2 {
+    font-size: clamp(42px, 7vw, 65px);
+  }
+
+  .cys-logo-marco {
+    top: 5%;
+    right: 5%;
+    width: 39%;
+    max-width: 300px;
+  }
+
+  .cys-texto {
+    width: 56%;
+    margin-top: 145px;
+  }
+
+  .cys-texto h1 {
+    font-size: clamp(27px, 4vw, 36px);
+  }
+
+  .cys-contenido {
+    padding: 60px 5%;
+  }
+
+  .cys-tarjetas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cys-llamado {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .cys-llamado-texto {
+    min-width: 60%;
+  }
+
+  .cys-llamado-boton {
+    margin-left: 80px;
+  }
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+  .cys-hero {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 20px 35px;
+  }
+
+  .cys-fondo {
+    inset: 185px 0 0;
+  }
+
+  .cys-lateral {
+    top: 20px;
+    left: 0;
+    width: 27%;
+    height: 145px;
+    border-radius: 0 0 45px 0;
+  }
+
+  .cys-lateral h2 {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+
+  .cys-flecha {
+    width: 65%;
+    height: 30px;
+    border-width: 1.5px;
+  }
+
+  .cys-flecha span::after {
+    width: 8px;
+    height: 8px;
+    border-width: 1.5px;
+  }
+
+  .cys-logo-marco {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: min(55%, 210px);
+    margin: 20px 0 25px auto;
+    padding: 5px;
+    border-width: 4px;
+    box-shadow: 0 8px 0 var(--cys-marron-claro);
+  }
+
+  .cys-texto {
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+    padding-top: 12px;
+  }
+
+  .cys-etiqueta {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .cys-texto h1 {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .cys-texto p {
+    font-size: 13px;
+  }
+
+  .cys-decoracion {
+    right: 5%;
+    bottom: 8px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .cys-contenido {
+    padding: 45px 20px;
+  }
+
+  .cys-intro {
+    margin-bottom: 50px;
+  }
+
+  .cys-intro h2,
+  .cys-areas-encabezado h2 {
+    font-size: clamp(27px, 8vw, 34px);
+  }
+
+  .cys-descripcion {
+    font-size: 13px;
+  }
+
+  .cys-lista-beneficios {
+    grid-template-columns: 1fr;
+    gap: 11px;
+    margin-top: 23px;
+  }
+
+  .cys-beneficio {
+    min-height: 78px;
+    padding: 13px;
+    gap: 12px;
+    border-radius: 11px;
+  }
+
+  .cys-beneficio-icono {
+    width: 41px;
+    height: 41px;
+    border-radius: 10px;
+  }
+
+  .cys-beneficio-texto {
+    font-size: 12px;
+  }
+
+  .cys-beneficio-flecha {
+    width: 17px;
+    height: 17px;
+  }
+
+  .cys-tarjetas {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .cys-tarjeta {
+    padding: 23px 20px;
+  }
+
+  .cys-tarjeta h3 {
+    font-size: 18px;
+  }
+
+  .cys-llamado {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: 45px;
+    padding: 23px 19px;
+    border-radius: 13px;
+  }
+
+  .cys-llamado-icono {
+    width: 52px;
+    height: 52px;
+  }
+
+  .cys-llamado-texto {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .cys-llamado-texto h2 {
+    font-size: 22px;
+  }
+
+  .cys-llamado-boton {
+    width: 100%;
+    margin-left: 0;
+    padding: 12px;
+  }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pagina-cys *,
+  .pagina-cys *::before,
+  .pagina-cys *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

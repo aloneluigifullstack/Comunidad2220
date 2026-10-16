@@ -1072,9 +1072,9 @@ button {
 }
 
 .pagina-quienes {
-  --color-fondo: #80d7b0;
-  --color-acento: #164d3a;
-  color: #102f24;
+  --color-fondo: #acacac;
+  --color-acento: #898380;
+  color: #090000;
 }
 
 .pagina-congresos {
@@ -1087,13 +1087,13 @@ button {
 
 .pagina-servicio {
   --color-fondo: #ffa200;
-  --color-acento: #332000;
+  --color-acento: #d0cbd2;
   color: #251900;
 }
 
 .pagina-banda {
-  --color-fondo: #d7d7d7;
-  --color-acento: #44296a;
+  --color-fondo: #ffffff;
+  --color-acento: #ae90d6;
   color: #222;
 }
 
@@ -1201,8 +1201,9 @@ button {
 
 .pagina-detalle p {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.9;
+   font-weight: 500;
 }
 
 .pagina-detalle a {

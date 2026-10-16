@@ -1,0 +1,692 @@
+/* =====================================
+   FORMACIÓN TEOLÓGICA - BANNER COMPACTO
+   COMUNIDAD 2220
+===================================== */
+
+.pagina-formacion {
+    --ft-marron: #270303;
+    --ft-marron-claro: #482719;
+    --ft-dorado: #e6ad16;
+    --ft-blanco: #ffffff;
+
+    width: 100%;
+    overflow: hidden;
+    background: var(--ft-blanco);
+    color: var(--ft-marron);
+    font-family: inherit;
+}
+
+/* =====================================
+   HERO PRINCIPAL - FORMATO BANNER
+===================================== */
+
+.formacion-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: 420px;
+    padding: 45px 7%;
+    overflow: hidden;
+    background: var(--ft-blanco);
+}
+
+/* Fondo marrón inferior */
+
+.formacion-fondo {
+    position: absolute;
+    z-index: -2;
+    inset: 38% 0 0;
+    background: var(--ft-marron);
+}
+
+/* =====================================
+   PANEL LATERAL FT
+===================================== */
+
+.formacion-lateral {
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 5%;
+    width: 25%;
+    height: 52%;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: var(--ft-marron);
+    border-radius: 80px 100px 0 0;
+    color: var(--ft-blanco);
+}
+
+.formacion-lateral h2 {
+    margin: 0;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+/* Botón con flecha */
+
+.formacion-flecha {
+    width: 48%;
+    max-width: 135px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--ft-blanco);
+    border-radius: 50px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    transform: translateY(-1px);
+   
+    
+}
+
+.formacion-flecha span {
+    position: relative;
+    width: 40%;
+    height: 2px;
+    background: var(--ft-blanco);
+}
+
+.formacion-flecha span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--ft-blanco);
+    border-right: 2px solid var(--ft-blanco);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+
+
+/* =====================================
+   LOGO CIRCULAR COMPACTO
+===================================== */
+
+.formacion-logo-marco {
+    position: absolute;
+    z-index: 2;
+    top: 3%;
+    right: 9%;
+    width: min(36%, 390px);
+    aspect-ratio: 1;
+    padding: 7px;
+    border: 6px solid var(--ft-blanco);
+    border-radius: 50%;
+    background: var(--ft-marron-claro);
+    box-shadow: 0 12px 0 var(--ft-marron-claro);
+}
+
+.formacion-logo-circulo {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--ft-marron);
+}
+
+.formacion-logo-circulo img {
+    display: block;
+    width: 114%;
+    height: 101%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    transform: translateX(-30px);
+    
+}
+
+/* =====================================
+   TEXTO PRINCIPAL
+===================================== */
+
+.formacion-texto {
+    position: relative;
+    z-index: 4;
+    width: 52%;
+    max-width: 500px;
+    margin-top: 150px;
+    color: var(--ft-blanco);
+}
+
+.formacion-etiqueta {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--ft-dorado);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.formacion-texto h1 {
+    margin: 0 0 12px;
+    font-size: clamp(28px, 3.2vw, 43px);
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.formacion-texto p {
+    max-width: 420px;
+    margin: 0 0 18px;
+    color: black;
+    font-size: 15px;
+    line-height: 4.6;
+}
+
+/* Botón principal */
+
+.formacion-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 17px;
+    border: 1.5px solid var(--ft-dorado);
+    border-radius: 4px;
+    color: var(--ft-blanco);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.3s, color 0.3s;
+}
+
+.formacion-boton span {
+    color: var(--ft-dorado);
+    font-size: 18px;
+}
+
+.formacion-boton:hover {
+    background: var(--ft-dorado);
+    color: var(--ft-marron);
+}
+
+.formacion-boton:hover span {
+    color: var(--ft-marron);
+}
+
+/* Decoración inferior */
+
+.formacion-decoracion {
+    position: absolute;
+    z-index: 3;
+    right: 9%;
+    bottom: 5%;
+    color: var(--ft-dorado);
+    font-size: clamp(20px, 2.5vw, 30px);
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 900px) {
+    .formacion-hero {
+        min-height: 390px;
+        padding: 35px 5%;
+    }
+
+    .formacion-lateral {
+        top: 10%;
+        width: 25%;
+        height: 45%;
+    }
+
+    .formacion-lateral h2 {
+        font-size: clamp(42px, 7vw, 65px);
+    }
+
+    .formacion-logo-marco {
+        top: 5%;
+        right: 5%;
+        width: 39%;
+        max-width: 300px;
+    }
+
+    .formacion-texto {
+        width: 56%;
+        margin-top: 145px;
+    }
+
+    .formacion-texto h1 {
+        font-size: clamp(27px, 4vw, 36px);
+    }
+
+    .formacion-texto p {
+        font-size: 13px;
+    }
+}
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+    .formacion-hero {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 20px 35px;
+    }
+
+    .formacion-fondo {
+        inset: 185px 0 0;
+    }
+
+    .formacion-lateral {
+        top: 20px;
+        left: 0;
+        width: 27%;
+        height: 145px;
+        min-height: 0;
+        border-radius: 0 0 45px 0;
+    }
+
+    .formacion-lateral h2 {
+        font-size: clamp(34px, 10vw, 48px);
+    }
+
+    .formacion-flecha {
+        width: 65%;
+        height: 30px;
+        border-width: 1.5px;
+    }
+
+    .formacion-flecha span {
+        height: 2px;
+    }
+
+    .formacion-flecha span::after {
+        width: 8px;
+        height: 8px;
+        border-width: 1.5px;
+    }
+
+    .formacion-logo-marco {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: min(55%, 210px);
+        margin: 20px 0 25px auto;
+        padding: 5px;
+        border-width: 4px;
+        box-shadow: 0 8px 0 var(--ft-marron-claro);
+    }
+
+    .formacion-texto {
+        width: 100%;
+        max-width: none;
+        margin-top: 0;
+        padding-top: 12px;
+    }
+
+    .formacion-etiqueta {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+    }
+
+    .formacion-texto h1 {
+        font-size: clamp(27px, 8vw, 35px);
+        margin-bottom: 10px;
+    }
+
+    .formacion-texto p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
+    .formacion-boton {
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+
+    .formacion-decoracion {
+        right: 6%;
+        bottom: 8px;
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+}
+
+/* =====================================
+   SECCIÓN DE CURSOS
+===================================== */
+
+.formacion-cursos {
+    padding: 30px 8%;
+    background: #fff;
+}
+
+/* =========================================
+   INTRO FORMACIÓN TEOLÓGICA
+========================================= */
+
+.formacion-cursos-intro {
+    width: min(100%, 850px);
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.formacion-subtitulo {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #a57909;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.formacion-cursos-intro h2 {
+    margin: 0 0 14px;
+    color: #270303;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 850;
+    letter-spacing: -1px;
+}
+
+.formacion-descripcion {
+    max-width: 610px;
+    margin: 0 auto 30px;
+    color: #716766;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   LISTA DE BOTONES TRANSPARENTES
+========================================= */
+
+.formacion-lista-beneficios {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+    text-align: left;
+}
+
+.formacion-beneficio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 90px;
+    padding: 18px;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(166, 125, 35, 0.28);
+    border-radius: 14px;
+
+    color: #3a2420;
+    cursor: default;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Línea decorativa */
+
+.formacion-beneficio::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18%;
+    width: 3px;
+    height: 64%;
+    background: #d3a42c;
+    border-radius: 0 5px 5px 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Icono */
+
+.beneficio-icono {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    color: #a57909;
+    background: rgba(211, 164, 44, 0.10);
+    border: 1px solid rgba(211, 164, 44, 0.25);
+    border-radius: 12px;
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Texto */
+
+.beneficio-texto {
+    flex: 1;
+    color: #554441;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+/* Flecha */
+
+.beneficio-flecha {
+    flex-shrink: 0;
+    color: #b18a29;
+    opacity: 0.65;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* Efecto hover */
+
+.formacion-beneficio:hover {
+    background: rgba(255, 255, 255, 0.96);
+    border-color: #c49a34;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(39, 3, 3, 0.08);
+}
+
+.formacion-beneficio:hover::before {
+    opacity: 1;
+}
+
+.formacion-beneficio:hover .beneficio-icono {
+    color: #ffffff;
+    background: #482719;
+    transform: scale(1.05);
+}
+
+.formacion-beneficio:hover .beneficio-flecha {
+    opacity: 1;
+    transform: translate(3px, -3px);
+}
+
+/* Accesibilidad: movimiento reducido */
+
+@media (prefers-reduced-motion: reduce) {
+    .formacion-beneficio,
+    .beneficio-icono,
+    .beneficio-flecha {
+        transition: none;
+    }
+}
+
+/* =========================================
+   TABLETS Y CELULARES
+========================================= */
+
+@media (max-width: 650px) {
+    .formacion-cursos-intro {
+        margin-bottom: 30px;
+    }
+
+    .formacion-subtitulo {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .formacion-descripcion {
+        font-size: 14px;
+        margin-bottom: 22px;
+    }
+
+    .formacion-lista-beneficios {
+        grid-template-columns: 1fr;
+        gap: 11px;
+        margin-top: 22px;
+    }
+
+    .formacion-beneficio {
+        min-height: 78px;
+        padding: 14px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+
+    .beneficio-icono {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+    }
+
+    .beneficio-texto {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .beneficio-flecha {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+.formacion-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.formacion-tarjeta {
+    padding: 35px;
+    border: 1px solid #e8e0d9;
+    border-top: 5px solid var(--ft-dorado);
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.formacion-tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(39, 3, 3, 0.10);
+}
+
+.formacion-numero {
+    margin-bottom: 20px;
+    color: var(--ft-dorado);
+    font-size: 36px;
+    font-weight: 900;
+}
+
+.formacion-tarjeta h2 {
+    margin-bottom: 15px;
+    color: var(--ft-marron);
+    font-size: 25px;
+}
+
+.formacion-tarjeta p {
+    margin-bottom: 25px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.formacion-tarjeta a {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    color: var(--ft-marron);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.formacion-tarjeta a span {
+    color: #b7870c;
+    font-size: 22px;
+}
+
+.formacion-tarjeta a:hover {
+    color: #a57909;
+}
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 900px) {
+    .formacion-hero {
+        min-height: 760px;
+        padding: 100px 6% 70px;
+    }
+
+    .formacion-lateral {
+        top: 10%;
+        width: 28%;
+        height: 42%;
+        min-height: 240px;
+    }
+
+    .formacion-logo-marco {
+        top: 5%;
+        right: 5%;
+        width: 55%;
+    }
+
+    .formacion-texto {
+        width: 55%;
+        margin-top: 310px;
+    }
+
+    .formacion-texto h1 {
+        font-size: 40px;
+    }
+}
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+   
+
+    .formacion-cursos {
+        padding: 60px 22px;
+    }
+
+    .formacion-tarjetas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .formacion-tarjeta {
+        padding: 26px;
+    }
+}
