@@ -14,7 +14,7 @@ const areas = [
       "Estudia, profundiza y aplica la Palabra de Dios en tu vida.",
     imagen: `${import.meta.env.BASE_URL}images/formacionteologica.jpeg`,
     icono: <FaBookOpen />,
-    enlace: "#eventos",
+    enlace: `${import.meta.env.BASE_URL}formacion-teologica`,
   },
   {
     id: "servicio",
@@ -23,7 +23,7 @@ const areas = [
       "Desarrolla tus talentos y sé parte del cambio en tu entorno.",
     imagen: `${import.meta.env.BASE_URL}/images/capacitacion.jpg`,
     icono: <FaUsers />,
-    enlace: "#contacto",
+    enlace: `${import.meta.env.BASE_URL}capacitacion-servicio`,
   },
   {
     id: "banda",
@@ -32,7 +32,7 @@ const areas = [
       "Música, adoración y una misión que nos une.",
     imagen: `${import.meta.env.BASE_URL}/images/bandacomunidad.jpg`,
     icono: <FaMusic />,
-    enlace: "#contacto",
+    enlace: `${import.meta.env.BASE_URL}banda-comunidad`,
   },
 ];
 

@@ -27,7 +27,7 @@ export default function Footer() {
                aria-label="Facebook">
               <FaFacebook />
             </a>
-            <a href="https://www.instagram.com/"
+            <a href="https://www.instagram.com/comunidad.2220/"
                target="_blank" rel="noreferrer"
                aria-label="Instagram">
               <FaInstagram />
@@ -37,7 +37,7 @@ export default function Footer() {
                aria-label="YouTube">
               <FaYoutube />
             </a>
-            <a href="https://www.tiktok.com/"
+            <a href="https://www.tiktok.com/@comunidad2220"
                target="_blank" rel="noreferrer"
                aria-label="TikTok">
               <FaTiktok />

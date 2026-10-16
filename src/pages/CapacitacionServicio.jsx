@@ -9,6 +9,10 @@ import {
   HeartHandshake,
   Target,
   BookOpen,
+  UserGroup,
+  LibraryBig,
+  Church,
+  Globe,
 } from "lucide-react";
 
 export default function CapacitacionServicio() {
@@ -74,7 +78,7 @@ export default function CapacitacionServicio() {
           <div className="cys-lista-beneficios">
             <div className="cys-beneficio">
               <span className="cys-beneficio-icono">
-                <GraduationCap size={22} />
+                <UserGroup size={22} />
               </span>
 
               <span className="cys-beneficio-texto">
@@ -88,7 +92,7 @@ export default function CapacitacionServicio() {
 
             <div className="cys-beneficio">
               <span className="cys-beneficio-icono">
-                <Users size={22} />
+                <LibraryBig size={22} />
               </span>
 
               <span className="cys-beneficio-texto">
@@ -101,7 +105,7 @@ export default function CapacitacionServicio() {
 
             <div className="cys-beneficio">
               <span className="cys-beneficio-icono">
-                <HandHeart size={22} />
+                <Church size={22} />
               </span>
 
               <span className="cys-beneficio-texto">
@@ -114,7 +118,7 @@ export default function CapacitacionServicio() {
 
             <div className="cys-beneficio">
               <span className="cys-beneficio-icono">
-                <Lightbulb size={22} />
+                <Globe size={22} />
               </span>
 
               <span className="cys-beneficio-texto">

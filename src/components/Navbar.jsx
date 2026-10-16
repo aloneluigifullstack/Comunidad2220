@@ -90,7 +90,7 @@ export default function Navbar() {
                 </a>
 
                 <a
-                    href="https://www.instagram.com/"
+                    href="https://www.instagram.com/comunidad.2220/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
@@ -99,7 +99,7 @@ export default function Navbar() {
                 </a>
 
                 <a
-                    href="https://www.tiktok.com/"
+                    href="https://www.tiktok.com/@comunidad2220"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="TikTok"
