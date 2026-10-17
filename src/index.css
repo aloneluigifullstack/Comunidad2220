@@ -1109,6 +1109,12 @@ button {
   text-align: center;
 }
 
+.pagina-contenido-mision{
+  max-width: 900px;
+  margin: 0 auto -55px;
+  text-align: center;
+}
+
 .pagina-etiqueta {
   display: inline-flex;
   align-items: center;
@@ -1128,7 +1134,23 @@ button {
   letter-spacing: -1.5px;
 }
 
+.pagina-contenido-mision h1 {
+  margin: 0 0 22px;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+}
+
 .pagina-contenido > p {
+  max-width: 700px;
+  margin: 0 auto 28px;
+  font-size: 16px;
+  line-height: 1.9;
+  opacity: .95;
+}
+
+.pagina-contenido-mision > p {
   max-width: 700px;
   margin: 0 auto 28px;
   font-size: 16px;
@@ -1401,5 +1423,378 @@ button {
     margin-bottom: 10px;
     padding-left: 18px;
     line-height: 1.45;
+  }
+}
+
+
+/* =========================================
+   MISIÓN Y VISIÓN - COMUNIDAD 2220
+   Diseño moderno + animaciones
+========================================= */
+
+.mision-vision {
+  --mv-dorado: #560221;
+  --mv-fondo: #828282;
+  --mv-texto: #481a1a;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+
+  width: min(1150px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 80px 0;
+
+  overflow: visible;
+}
+
+/* Tarjetas */
+.mision-vision .mv-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-width: 0;
+  min-height: 360px;
+  padding: 38px;
+
+  color: var(--mv-texto);
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(230, 173, 22, 0.13),
+      transparent 42%
+    ),
+    linear-gradient(145deg, #b5b2b5, var(--mv-fondo));
+
+  border: 1px solid rgba(18, 17, 15, 0.22);
+  border-radius: 22px;
+
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.14);
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease,
+    background-color 0.45s ease;
+
+  animation: mvEntrada 0.85s ease both;
+}
+
+/* Entrada escalonada */
+.mision-vision .mv-mision {
+  animation-delay: 0.1s;
+}
+
+.mision-vision .mv-vision {
+  animation-delay: 0.28s;
+}
+
+/* Halo decorativo */
+.mision-vision .mv-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 210px;
+  height: 210px;
+  top: -115px;
+  right: -90px;
+
+  border-radius: 50%;
+  background: rgba(12, 12, 12, 0.1);
+  filter: blur(5px);
+
+  transition:
+    transform 0.6s ease,
+    background 0.6s ease;
+}
+
+/* Brillo que cruza la tarjeta */
+.mision-vision .mv-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    110deg,
+    transparent,
+    rgba(196, 168, 168, 0.045),
+    transparent
+  );
+
+  transform: skewX(-18deg);
+  transition: left 0.8s ease;
+}
+
+/* Hover de escritorio */
+@media (hover: hover) and (pointer: fine) {
+  .mision-vision .mv-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(230, 173, 22, 0.65);
+
+    box-shadow:
+      0 24px 55px rgba(0, 0, 0, 0.24),
+      0 0 25px rgba(230, 173, 22, 0.07);
+  }
+
+  .mision-vision .mv-card:hover::before {
+    transform: scale(1.4);
+    background: rgba(185, 138, 8, 0.16);
+  }
+
+  .mision-vision .mv-card:hover::after {
+    left: 150%;
+  }
+}
+
+/* Cabecera */
+.mision-vision .mv-card-cabecera {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-bottom: 26px;
+}
+
+.mision-vision .mv-icono {
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+
+  color: var(--mv-dorado);
+  font-size: 23px;
+
+  background: #808080;
+  border: 1px solid rgba(58, 55, 48, 0.38);
+  border-radius: 16px;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mision-vision .mv-card:hover .mv-icono {
+    transform: rotate(-6deg) scale(1.08);
+    background: rgba(230, 173, 22, 0.17);
+  }
+}
+
+/* Etiquetas */
+.mision-vision .mv-etiqueta {
+  color: var(--mv-dorado);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+/* Títulos */
+.mision-vision .mv-card h2 {
+  margin: 0 0 16px;
+  color: #0a0000;
+
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Línea dorada */
+.mision-vision .mv-linea {
+  width: 56px;
+  height: 3px;
+  margin-bottom: 22px;
+
+  border-radius: 20px;
+  background: var(--mv-dorado);
+
+  transition: width 0.4s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mision-vision .mv-card:hover .mv-linea {
+    width: 95px;
+  }
+}
+
+/* Párrafos */
+.mision-vision .mv-card p {
+  margin: 0 0 25px;
+
+  color: rgba(13, 1, 1, 0.79);
+  font-size: 18px;
+  line-height: 1.9;
+  font-weight: 600;
+}
+
+/* Número decorativo */
+.mision-vision .mv-numero {
+  position: absolute;
+  right: 25px;
+  bottom: 65px;
+
+  color: rgba(255, 255, 255, 0.055);
+  font-size: 76px;
+  font-weight: 900;
+  line-height: 1;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Enlace inferior */
+.mision-vision .mv-enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: auto;
+  padding-top: 12px;
+
+  color: var(--mv-dorado);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.mision-vision .mv-enlace svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.mision-vision .mv-enlace:hover {
+  gap: 14px;
+  color: #271906;
+}
+
+.mision-vision .mv-enlace:hover svg {
+  transform: translateX(3px);
+}
+
+/* =========================================
+   ANIMACIÓN DE ENTRADA
+========================================= */
+
+@keyframes mvEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+  .mision-vision {
+    gap: 20px;
+    width: calc(100% - 40px);
+    padding: 60px 0;
+  }
+
+  .mision-vision .mv-card {
+    min-height: 350px;
+    padding: 28px;
+    border-radius: 18px;
+  }
+
+  .mision-vision .mv-card h2 {
+    font-size: 27px;
+  }
+
+  .mision-vision .mv-card p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 640px) {
+  .mision-vision {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+
+    width: calc(100% - 32px);
+    padding: 45px 0;
+  }
+
+  .mision-vision .mv-card {
+    min-height: 0;
+    padding: 26px 23px;
+    border-radius: 17px;
+  }
+
+  .mision-vision .mv-card-cabecera {
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .mision-vision .mv-icono {
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+    border-radius: 13px;
+  }
+
+  .mision-vision .mv-etiqueta {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .mision-vision .mv-card h2 {
+    font-size: 25px;
+  }
+
+  .mision-vision .mv-card p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .mision-vision .mv-numero {
+    right: 18px;
+    bottom: 60px;
+    font-size: 60px;
+  }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .mision-vision .mv-card,
+  .mision-vision .mv-card::before,
+  .mision-vision .mv-card::after,
+  .mision-vision .mv-icono,
+  .mision-vision .mv-linea,
+  .mision-vision .mv-enlace,
+  .mision-vision .mv-enlace svg {
+    animation: none !important;
+    transition: none !important;
   }
 }

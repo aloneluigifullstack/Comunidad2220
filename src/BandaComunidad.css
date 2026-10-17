@@ -1,0 +1,242 @@
+
+/* =========================================
+   BANDA COMUNIDAD - EFECTO PARALLAX
+========================================= */
+
+.pagina-banda {
+  --banda-acento: #e6ad16;
+  --banda-blanco: #ffffff;
+}
+
+/* Fondos con efecto parallax */
+.pagina-banda .banda-parallax {
+  position: relative;
+  isolation: isolate;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* HERO PRINCIPAL */
+.pagina-banda .banda-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 720px;
+  padding: 100px 24px;
+  color: var(--banda-blanco);
+}
+
+/* Contenido por encima del fondo */
+.pagina-banda .banda-contenido-interior {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1100px);
+  margin-inline: auto;
+}
+
+/* Título principal */
+.pagina-banda .banda-hero h1 {
+  margin: 15px 0 28px;
+  color: var(--banda-blanco);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+/* Etiqueta superior */
+.pagina-banda .pagina-etiqueta {
+  display: inline-block;
+  color: var(--banda-acento);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+/* Lista de misión */
+.pagina-banda .mision-texto {
+  max-width: 850px;
+}
+
+.pagina-banda .mision-texto ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.pagina-banda .mision-texto li {
+  color: rgba(255, 255, 255, 0.94);
+}
+
+/* Botones */
+.pagina-banda .banda-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.pagina-banda .banda-acciones .pagina-boton,
+.pagina-banda .banda-tarjeta .pagina-boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  text-decoration: none;
+}
+
+/* SECCIÓN DE MÚSICA */
+.pagina-banda .banda-musica {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 28px;
+  padding: 100px max(24px, calc((100% - 1100px) / 2));
+  color: var(--banda-blanco);
+  scroll-margin-top: 90px;
+}
+
+/* Tarjetas */
+.pagina-banda .banda-tarjeta {
+  padding: 36px;
+  border: 1px solid rgba(230, 173, 22, 0.35);
+  border-radius: 18px;
+  background: rgba(22, 14, 34, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+}
+
+.pagina-banda .banda-tarjeta h2 {
+  margin: 18px 0 12px;
+  color: var(--banda-blanco);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.pagina-banda .banda-tarjeta p {
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.pagina-banda .banda-icono-seccion {
+  width: 34px;
+  height: 34px;
+  color: var(--banda-acento);
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+  .pagina-banda .banda-hero {
+    min-height: 650px;
+    padding: 80px 32px;
+  }
+
+  .pagina-banda .banda-musica {
+    gap: 20px;
+    padding: 70px 28px;
+  }
+
+  .pagina-banda .banda-tarjeta {
+    padding: 28px;
+  }
+}
+
+/* =========================================
+   MÓVILES
+========================================= */
+
+@media (max-width: 600px) {
+  .pagina-banda .banda-parallax {
+    /*
+      En móviles se evita background-attachment: fixed
+      para mejorar compatibilidad y desplazamiento.
+    */
+    background-attachment: scroll;
+    background-position: center center;
+  }
+
+  .pagina-banda .banda-hero {
+    min-height: auto;
+    padding: 90px 22px 75px;
+  }
+
+  .pagina-banda .banda-hero h1 {
+    font-size: clamp(32px, 9vw, 44px);
+    margin: 14px 0 24px;
+  }
+
+  .pagina-banda .pagina-etiqueta {
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 1.7;
+  }
+
+  .pagina-banda .banda-acciones {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .pagina-banda .banda-acciones .pagina-boton {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .pagina-banda .banda-musica {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 55px 18px;
+  }
+
+  .pagina-banda .banda-tarjeta {
+    padding: 25px 21px;
+    border-radius: 14px;
+  }
+
+  .pagina-banda .banda-tarjeta h2 {
+    font-size: 24px;
+  }
+
+  .pagina-banda .banda-tarjeta p {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   CELULARES PEQUEÑOS
+========================================= */
+
+@media (max-width: 360px) {
+  .pagina-banda .banda-hero {
+    padding: 70px 16px 55px;
+  }
+
+  .pagina-banda .banda-hero h1 {
+    font-size: 30px;
+  }
+
+  .pagina-banda .banda-musica {
+    padding: 40px 12px;
+  }
+
+  .pagina-banda .banda-tarjeta {
+    padding: 21px 16px;
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .pagina-banda .banda-parallax {
+    background-attachment: scroll;
+  }
+}
