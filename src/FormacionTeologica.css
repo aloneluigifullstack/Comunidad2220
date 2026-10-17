@@ -1,7 +1,8 @@
-/* =====================================
-   FORMACIÓN TEOLÓGICA - BANNER COMPACTO
+/* =========================================================
+   FORMACIÓN TEOLÓGICA - PLANTILLA MAESTRA RESPONSIVE
    COMUNIDAD 2220
-===================================== */
+   Desktop / Tablet / Mobile
+========================================================= */
 
 .pagina-formacion {
   --ft-marron: #270303;
@@ -10,15 +11,27 @@
   --ft-blanco: #ffffff;
 
   width: 100%;
-  overflow: hidden;
+  min-width: 0;
+  overflow-x: clip;
   background: var(--ft-blanco);
   color: var(--ft-marron);
   font-family: inherit;
+  box-sizing: border-box;
 }
 
-/* =====================================
-   HERO PRINCIPAL - FORMATO BANNER
-===================================== */
+.pagina-formacion *,
+.pagina-formacion *::before,
+.pagina-formacion *::after {
+  box-sizing: border-box;
+}
+
+.pagina-formacion img {
+  max-width: 100%;
+}
+
+/* =========================================================
+   HERO PRINCIPAL - BANNER
+========================================================= */
 
 .formacion-hero {
   position: relative;
@@ -26,12 +39,10 @@
   display: flex;
   align-items: center;
   min-height: 420px;
-  padding: 45px 7%;
+  padding: clamp(32px, 4.5vw, 48px) 7%;
   overflow: hidden;
   background: var(--ft-blanco);
 }
-
-/* Fondo marrón inferior */
 
 .formacion-fondo {
   position: absolute;
@@ -40,25 +51,24 @@
   background: var(--ft-marron);
 }
 
-/* =====================================
-   PANEL LATERAL FT
-===================================== */
+/* =========================================================
+   PANEL LATERAL
+========================================================= */
 
 .formacion-lateral {
   position: absolute;
   z-index: 3;
-  left: 0;
   top: 5%;
+  left: 0;
   width: 25%;
   height: 52%;
-  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  color: var(--ft-blanco);
   background: var(--ft-marron);
   border-radius: 80px 100px 0 0;
-  color: var(--ft-blanco);
 }
 
 .formacion-lateral h2 {
@@ -72,22 +82,21 @@
 /* Botón con flecha */
 
 .formacion-flecha {
-  width: 48%;
-  max-width: 135px;
-  height: 43px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 48%;
+  max-width: 135px;
+  min-height: 43px;
   border: 2px solid var(--ft-blanco);
   border-radius: 50px;
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
   transform: translateY(-1px);
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .formacion-flecha span {
   position: relative;
+  display: block;
   width: 40%;
   height: 2px;
   background: var(--ft-blanco);
@@ -105,9 +114,14 @@
   transform: translateY(-50%) rotate(45deg);
 }
 
-/* =====================================
-   LOGO CIRCULAR COMPACTO
-===================================== */
+.formacion-flecha:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   LOGO CIRCULAR
+========================================================= */
 
 .formacion-logo-marco {
   position: absolute;
@@ -115,7 +129,7 @@
   top: 3%;
   right: 9%;
   width: min(36%, 390px);
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   padding: 7px;
   border: 6px solid var(--ft-blanco);
   border-radius: 50%;
@@ -133,24 +147,23 @@
 
 .formacion-logo-circulo img {
   display: block;
-  width: 110%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
-  transform: translateX(-4.5%);
 }
 
-/* =====================================
-   TEXTO PRINCIPAL
-===================================== */
+/* =========================================================
+   TEXTO PRINCIPAL DEL BANNER
+========================================================= */
 
 .formacion-texto {
   position: relative;
   z-index: 4;
   width: 52%;
   max-width: 500px;
-  margin-top: 150px;
+  margin-top: clamp(115px, 12vw, 150px);
   color: var(--ft-blanco);
 }
 
@@ -166,14 +179,15 @@
 .formacion-texto h1 {
   margin: 0 0 12px;
   font-size: clamp(28px, 3.2vw, 43px);
-  line-height: 1.1;
   font-weight: 800;
+  line-height: 1.1;
+  overflow-wrap: break-word;
 }
 
 .formacion-texto p {
   max-width: 420px;
   margin: 0 0 20px;
-  color: #fff;
+  color: var(--ft-blanco);
   font-size: 15px;
   line-height: 1.7;
   overflow-wrap: break-word;
@@ -184,7 +198,9 @@
 .formacion-boton {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 15px;
+  max-width: 100%;
   padding: 10px 17px;
   border: 1.5px solid var(--ft-dorado);
   border-radius: 4px;
@@ -192,14 +208,13 @@
   text-decoration: none;
   font-size: 13px;
   font-weight: 700;
-  transition:
-    background 0.3s,
-    color 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .formacion-boton span {
   color: var(--ft-dorado);
   font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .formacion-boton:hover {
@@ -209,6 +224,13 @@
 
 .formacion-boton:hover span {
   color: var(--ft-marron);
+}
+
+.formacion-boton:focus-visible,
+.formacion-flecha:focus-visible,
+.formacion-tarjeta a:focus-visible {
+  outline: 3px solid var(--ft-dorado);
+  outline-offset: 4px;
 }
 
 /* Decoración inferior */
@@ -222,156 +244,20 @@
   font-size: clamp(20px, 2.5vw, 30px);
   font-weight: 900;
   letter-spacing: 3px;
+  pointer-events: none;
 }
 
-/* =====================================
-   TABLETS
-===================================== */
-
-@media (max-width: 900px) {
-  .formacion-hero {
-    min-height: 390px;
-    padding: 35px 5%;
-  }
-
-  .formacion-lateral {
-    top: 10%;
-    width: 25%;
-    height: 45%;
-  }
-
-  .formacion-lateral h2 {
-    font-size: clamp(42px, 7vw, 65px);
-  }
-
-  .formacion-logo-marco {
-    top: 5%;
-    right: 5%;
-    width: 39%;
-    max-width: 300px;
-  }
-
-  .formacion-texto {
-    width: 56%;
-    margin-top: 145px;
-  }
-
-  .formacion-texto h1 {
-    font-size: clamp(27px, 4vw, 36px);
-  }
-
-  .formacion-texto p {
-    font-size: 13px;
-  }
-}
-
-/* =====================================
-   CELULARES
-===================================== */
-
-@media (max-width: 600px) {
-  .formacion-hero {
-    min-height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0 20px 35px;
-  }
-
-  .formacion-fondo {
-    inset: 185px 0 0;
-  }
-
-  .formacion-lateral {
-    top: 20px;
-    left: 0;
-    width: 27%;
-    height: 145px;
-    min-height: 0;
-    border-radius: 0 0 45px 0;
-  }
-
-  .formacion-lateral h2 {
-    font-size: clamp(34px, 10vw, 48px);
-  }
-
-  .formacion-flecha {
-    width: 65%;
-    height: 30px;
-    border-width: 1.5px;
-  }
-
-  .formacion-flecha span {
-    height: 2px;
-  }
-
-  .formacion-flecha span::after {
-    width: 8px;
-    height: 8px;
-    border-width: 1.5px;
-  }
-
-  .formacion-logo-marco {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: min(55%, 210px);
-    margin: 20px 0 25px auto;
-    padding: 5px;
-    border-width: 4px;
-    box-shadow: 0 8px 0 var(--ft-marron-claro);
-  }
-
-  .formacion-texto {
-    width: 100%;
-    max-width: none;
-    margin-top: 0;
-    padding-top: 12px;
-  }
-
-  .formacion-etiqueta {
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    margin-bottom: 8px;
-  }
-
-  .formacion-texto h1 {
-    font-size: clamp(27px, 8vw, 35px);
-    margin-bottom: 10px;
-  }
-
-  .formacion-texto p {
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 16px;
-  }
-
-  .formacion-boton {
-    padding: 9px 14px;
-    font-size: 12px;
-  }
-
-  .formacion-decoracion {
-    right: 6%;
-    bottom: 8px;
-    font-size: 17px;
-    letter-spacing: 2px;
-  }
-}
-
-/* =====================================
+/* =========================================================
    SECCIÓN DE CURSOS
-===================================== */
+========================================================= */
 
 .formacion-cursos {
   width: 100%;
   padding: 48px clamp(18px, 5vw, 80px);
-  background: #fff;
-  box-sizing: border-box;
+  background: var(--ft-blanco);
 }
-/* =========================================
-   INTRO FORMACIÓN TEOLÓGICA
-========================================= */
+
+/* Introducción */
 
 .formacion-cursos-intro {
   width: min(100%, 850px);
@@ -390,10 +276,12 @@
 
 .formacion-cursos-intro h2 {
   margin: 0 0 14px;
-  color: #270303;
+  color: var(--ft-marron);
   font-size: clamp(30px, 4vw, 44px);
   font-weight: 850;
   letter-spacing: -1px;
+  line-height: 1.2;
+  overflow-wrap: break-word;
 }
 
 .formacion-descripcion {
@@ -404,9 +292,9 @@
   line-height: 1.8;
 }
 
-/* =========================================
-   LISTA DE BOTONES TRANSPARENTES
-========================================= */
+/* =========================================================
+   LISTA DE BENEFICIOS
+========================================================= */
 
 .formacion-lista-beneficios {
   display: grid;
@@ -421,17 +309,15 @@
   display: flex;
   align-items: center;
   gap: 14px;
+  min-width: 0;
   min-height: 90px;
   padding: 18px;
   overflow: hidden;
-
+  color: #3a2420;
   background: rgba(255, 255, 255, 0.55);
   border: 1px solid rgba(166, 125, 35, 0.28);
   border-radius: 14px;
-
-  color: #3a2420;
   cursor: default;
-
   transition:
     background 0.3s ease,
     border-color 0.3s ease,
@@ -439,13 +325,11 @@
     box-shadow 0.3s ease;
 }
 
-/* Línea decorativa */
-
 .formacion-beneficio::before {
   content: "";
   position: absolute;
-  left: 0;
   top: 18%;
+  left: 0;
   width: 3px;
   height: 64%;
   background: #d3a42c;
@@ -454,50 +338,39 @@
   transition: opacity 0.3s ease;
 }
 
-/* Icono */
-
 .beneficio-icono {
-  flex-shrink: 0;
   display: flex;
+  flex: 0 0 46px;
   align-items: center;
   justify-content: center;
-
   width: 46px;
   height: 46px;
-
   color: #a57909;
   background: rgba(211, 164, 44, 0.1);
   border: 1px solid rgba(211, 164, 44, 0.25);
   border-radius: 12px;
-
   transition:
     color 0.3s ease,
     background 0.3s ease,
     transform 0.3s ease;
 }
 
-/* Texto */
-
 .beneficio-texto {
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
   color: #554441;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.65;
+  overflow-wrap: anywhere;
 }
-
-/* Flecha */
 
 .beneficio-flecha {
-  flex-shrink: 0;
+  flex: 0 0 auto;
   color: #b18a29;
   opacity: 0.65;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
-/* Efecto hover */
 
 .formacion-beneficio:hover {
   background: rgba(255, 255, 255, 0.96);
@@ -511,8 +384,8 @@
 }
 
 .formacion-beneficio:hover .beneficio-icono {
-  color: #ffffff;
-  background: #482719;
+  color: var(--ft-blanco);
+  background: var(--ft-marron-claro);
   transform: scale(1.05);
 }
 
@@ -521,64 +394,9 @@
   transform: translate(3px, -3px);
 }
 
-/* Accesibilidad: movimiento reducido */
-
-@media (prefers-reduced-motion: reduce) {
-  .formacion-beneficio,
-  .beneficio-icono,
-  .beneficio-flecha {
-    transition: none;
-  }
-}
-
-/* =========================================
-   TABLETS Y CELULARES
-========================================= */
-
-@media (max-width: 650px) {
-  .formacion-cursos-intro {
-    margin-bottom: 30px;
-  }
-
-  .formacion-subtitulo {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .formacion-descripcion {
-    font-size: 14px;
-    margin-bottom: 22px;
-  }
-
-  .formacion-lista-beneficios {
-    grid-template-columns: 1fr;
-    gap: 11px;
-    margin-top: 22px;
-  }
-
-  .formacion-beneficio {
-    min-height: 78px;
-    padding: 14px;
-    gap: 12px;
-    border-radius: 12px;
-  }
-
-  .beneficio-icono {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
-  }
-
-  .beneficio-texto {
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .beneficio-flecha {
-    width: 17px;
-    height: 17px;
-  }
-}
+/* =========================================================
+   TARJETAS DE FORMACIÓN
+========================================================= */
 
 .formacion-tarjetas {
   display: grid;
@@ -592,13 +410,11 @@
 .formacion-tarjeta {
   min-width: 0;
   padding: clamp(20px, 3vw, 35px);
+  overflow-wrap: break-word;
+  background: var(--ft-blanco);
   border: 1px solid #e8e0d9;
   border-top: 5px solid var(--ft-dorado);
-  background: #fff;
-  overflow-wrap: break-word;
-  transition:
-    transform 0.3s,
-    box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .formacion-tarjeta:hover {
@@ -614,19 +430,22 @@
 }
 
 .formacion-tarjeta h2 {
+  margin-top: 0;
   font-size: clamp(20px, 2.4vw, 25px);
   line-height: 1.3;
+  overflow-wrap: break-word;
 }
 
 .formacion-tarjeta p {
   color: #666;
   line-height: 1.7;
+  overflow-wrap: break-word;
 }
 
 .formacion-tarjeta a {
   display: inline-flex;
-  gap: 12px;
   align-items: center;
+  gap: 12px;
   color: var(--ft-marron);
   font-weight: 800;
   text-decoration: none;
@@ -641,13 +460,13 @@
   color: #a57909;
 }
 
-/* =========================================
-   RESPONSIVE - TABLETS
-   ========================================= */
+/* =========================================================
+   LAPTOPS Y TABLETS GRANDES
+========================================================= */
 
 @media (min-width: 601px) and (max-width: 900px) {
   .formacion-hero {
-    min-height: 460px;
+    min-height: 440px;
     padding: 35px 5%;
   }
 
@@ -669,7 +488,7 @@
   .formacion-flecha {
     width: 62%;
     max-width: 110px;
-    height: 38px;
+    min-height: 38px;
   }
 
   .formacion-logo-marco {
@@ -684,7 +503,7 @@
   .formacion-texto {
     width: 58%;
     max-width: 440px;
-    margin-top: 155px;
+    margin-top: 145px;
   }
 
   .formacion-texto h1 {
@@ -707,7 +526,6 @@
   }
 
   .formacion-lista-beneficios {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
 
@@ -716,12 +534,17 @@
     gap: 10px;
   }
 
+  .beneficio-icono {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+
   .beneficio-texto {
     font-size: 14px;
   }
 
   .formacion-tarjetas {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
 
@@ -730,23 +553,17 @@
   }
 }
 
-/* =========================================
-   RESPONSIVE - CELULARES
-   ========================================= */
+/* =========================================================
+   CELULARES
+========================================================= */
 
 @media (max-width: 600px) {
-  .pagina-formacion {
-    width: 100%;
-    overflow: hidden;
-  }
-
   .formacion-hero {
     min-height: 0;
     height: auto;
-    display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 0 20px 38px;
+    padding: 0 20px 42px;
   }
 
   .formacion-fondo {
@@ -758,7 +575,6 @@
     left: 0;
     width: 27%;
     height: 135px;
-    min-height: 0;
     border-radius: 0 0 35px 0;
   }
 
@@ -769,7 +585,7 @@
   .formacion-flecha {
     width: 62%;
     max-width: 75px;
-    height: 29px;
+    min-height: 29px;
     border-width: 1.5px;
   }
 
@@ -788,21 +604,18 @@
     top: auto;
     right: auto;
     width: min(55%, 210px);
-    aspect-ratio: 1 / 1;
     margin: 20px 0 25px auto;
     padding: 5px;
     border-width: 4px;
-    box-shadow: 0 8px 0 var(--cys-marron-claro);
+    box-shadow: 0 8px 0 var(--ft-marron-claro);
   }
 
   .formacion-logo-circulo img {
-    display: block;
     width: 100%;
-    height: 103%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 50%;
-    transform: translateX(1%);
+    transform: none;
   }
 
   .formacion-texto {
@@ -822,7 +635,6 @@
     margin-bottom: 12px;
     font-size: clamp(26px, 7.5vw, 35px);
     line-height: 1.15;
-    overflow-wrap: break-word;
   }
 
   .formacion-texto p {
@@ -833,9 +645,8 @@
   }
 
   .formacion-boton {
-    max-width: 100%;
-    padding: 10px 14px;
     gap: 10px;
+    padding: 10px 14px;
     font-size: 12px;
   }
 
@@ -864,8 +675,8 @@
 
   .formacion-cursos-intro h2 {
     font-size: clamp(25px, 7vw, 34px);
-    line-height: 1.2;
     letter-spacing: -0.5px;
+    line-height: 1.2;
   }
 
   .formacion-descripcion {
@@ -874,7 +685,7 @@
     line-height: 1.7;
   }
 
-  /* Beneficios: una columna */
+  /* Beneficios en una columna */
 
   .formacion-lista-beneficios {
     grid-template-columns: minmax(0, 1fr);
@@ -890,16 +701,15 @@
   }
 
   .beneficio-icono {
+    flex-basis: 40px;
     width: 40px;
     height: 40px;
     border-radius: 10px;
   }
 
   .beneficio-texto {
-    min-width: 0;
     font-size: 13px;
     line-height: 1.5;
-    overflow-wrap: anywhere;
   }
 
   .beneficio-flecha {
@@ -907,7 +717,7 @@
     height: 16px;
   }
 
-  /* Tarjetas de formación */
+  /* Tarjetas en una columna */
 
   .formacion-tarjetas {
     grid-template-columns: minmax(0, 1fr);
@@ -935,9 +745,9 @@
   }
 }
 
-/* =========================================
+/* =========================================================
    CELULARES MUY PEQUEÑOS
-   ========================================= */
+========================================================= */
 
 @media (max-width: 360px) {
   .formacion-hero {
@@ -972,6 +782,7 @@
   }
 
   .beneficio-icono {
+    flex-basis: 35px;
     width: 35px;
     height: 35px;
   }
@@ -985,9 +796,9 @@
   }
 }
 
-/* =========================================
+/* =========================================================
    ACCESIBILIDAD Y DISPOSITIVOS TÁCTILES
-   ========================================= */
+========================================================= */
 
 @media (hover: none) {
   .formacion-beneficio:hover,
@@ -995,15 +806,30 @@
     transform: none;
     box-shadow: none;
   }
+
+  .formacion-beneficio:hover .beneficio-icono,
+  .formacion-beneficio:hover .beneficio-flecha {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .formacion-flecha,
+  .formacion-boton,
+  .formacion-boton span,
   .formacion-beneficio,
+  .formacion-beneficio::before,
   .beneficio-icono,
   .beneficio-flecha,
-  .formacion-tarjeta,
-  .formacion-boton,
-  .formacion-flecha {
-    transition: none;
+  .formacion-tarjeta {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .formacion-beneficio:hover,
+  .formacion-tarjeta:hover,
+  .formacion-flecha:hover {
+    transform: none;
   }
 }

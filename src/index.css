@@ -1362,3 +1362,44 @@ button {
     transform: none;
   }
 }
+
+/* TABLETS: hasta 1024px */
+@media (max-width: 1024px) {
+  .mision-texto li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    line-height: 1.55;
+  }
+}
+
+/* CELULARES: hasta 768px */
+@media (max-width: 768px) {
+  .mision-texto li {
+    font-size: 16px;
+    margin-bottom: 13px;
+    padding-left: 22px;
+    line-height: 1.5;
+    transform: translateY(15px);
+  }
+}
+
+/* CELULARES PEQUEÑOS: hasta 480px */
+@media (max-width: 480px) {
+  .mision-texto li {
+    font-size: 15px;
+    margin-bottom: 11px;
+    padding-left: 20px;
+    line-height: 1.5;
+  }
+}
+
+/* CELULARES MUY PEQUEÑOS: hasta 360px */
+@media (max-width: 360px) {
+  .mision-texto li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-left: 18px;
+    line-height: 1.45;
+  }
+}

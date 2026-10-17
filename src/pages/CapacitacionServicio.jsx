@@ -44,7 +44,7 @@ export default function CapacitacionServicio() {
         <div className="cys-logo-marco">
           <div className="cys-logo-circulo">
             <img
-              src={`${import.meta.env.BASE_URL}images/logocomunidad.png`}
+              src={`${import.meta.env.BASE_URL}images/logoblanco_comunidad.png`}
               alt="Logo Comunidad 2220"
             />
           </div>
@@ -54,8 +54,7 @@ export default function CapacitacionServicio() {
 
         <div className="cys-texto">
           <h1>
-            Capacitación
-            <br />y servicio
+            Capacitación y servicio
           </h1>
 
           <a href="#oportunidades" className="cys-boton">

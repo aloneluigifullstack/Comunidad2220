@@ -1,19 +1,20 @@
-/* =========================================
-   CAPACITACIÓN Y SERVICIO
+/* =========================================================
+   CAPACITACIÓN Y SERVICIO - PLANTILLA MAESTRA RESPONSIVE
    COMUNIDAD 2220
-   CSS responsive corregido
-========================================= */
+   Desktop / Tablet / Mobile
+========================================================= */
 
 .pagina-cys {
   --cys-marron: #0064b2;
-  --cys-marron-claro: #482719;
+  --cys-marron-claro: #0064b2;
   --cys-dorado: #f59c1f;
   --cys-blanco: #ffffff;
   --cys-texto: #594b47;
   --cys-borde: rgba(166, 125, 35, 0.25);
 
   width: 100%;
-  overflow: hidden;
+  min-width: 0;
+  overflow-x: clip;
   background: var(--cys-blanco);
   color: var(--cys-marron);
   font-family: inherit;
@@ -26,9 +27,13 @@
   box-sizing: border-box;
 }
 
-/* =========================================
-   BANNER PRINCIPAL
-========================================= */
+.pagina-cys img {
+  max-width: 100%;
+}
+
+/* =========================================================
+   HERO PRINCIPAL - BANNER
+========================================================= */
 
 .cys-hero {
   position: relative;
@@ -36,7 +41,7 @@
   display: flex;
   align-items: center;
   min-height: 420px;
-  padding: 45px 7%;
+  padding: clamp(32px, 4.5vw, 48px) 7%;
   overflow: hidden;
   background: var(--cys-blanco);
 }
@@ -48,23 +53,24 @@
   background: var(--cys-marron);
 }
 
-/* Panel lateral */
+/* =========================================================
+   PANEL LATERAL
+========================================================= */
 
 .cys-lateral {
   position: absolute;
   z-index: 3;
-  left: 0;
   top: 5%;
+  left: 0;
   width: 25%;
   height: 52%;
-  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  color: var(--cys-blanco);
   background: var(--cys-marron);
   border-radius: 80px 100px 0 0;
-  color: var(--cys-blanco);
 }
 
 .cys-lateral h2 {
@@ -75,17 +81,18 @@
   letter-spacing: 1px;
 }
 
-/* Flecha del panel */
+/* Botón con flecha */
 
 .cys-flecha {
-  width: 48%;
-  max-width: 135px;
-  height: 43px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 48%;
+  max-width: 135px;
+  min-height: 43px;
   border: 2px solid var(--cys-blanco);
   border-radius: 50px;
+  transform: translateY(-1px);
   text-decoration: none;
   transition:
     background 0.3s ease,
@@ -94,6 +101,7 @@
 
 .cys-flecha span {
   position: relative;
+  display: block;
   width: 40%;
   height: 2px;
   background: var(--cys-blanco);
@@ -112,14 +120,13 @@
 }
 
 .cys-flecha:hover {
-  background: rgba(255, 255, 255, 0.13);
-  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
 }
 
-/* =========================================
+/* =========================================================
    LOGO CIRCULAR
-   Proporciones alineadas con Formación Teológica
-========================================= */
+========================================================= */
 
 .cys-logo-marco {
   position: absolute;
@@ -128,7 +135,6 @@
   right: 9%;
   width: min(36%, 390px);
   aspect-ratio: 1 / 1;
-  box-sizing: border-box;
   padding: 7px;
   border: 6px solid var(--cys-blanco);
   border-radius: 50%;
@@ -145,23 +151,24 @@
 }
 
 .cys-logo-circulo img {
-   display: block;
-    width: 110%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
-    transform: translateX(-4.5%);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
 
-/* Texto del banner */
+/* =========================================================
+   TEXTO PRINCIPAL DEL BANNER
+========================================================= */
 
 .cys-texto {
   position: relative;
   z-index: 4;
   width: 52%;
-  max-width: 500px;
-  margin-top: 150px;
+  max-width: 600px;
+  margin-top: clamp(115px, 12vw, 150px);
   color: var(--cys-blanco);
 }
 
@@ -176,40 +183,46 @@
 
 .cys-texto h1 {
   margin: 0 0 12px;
-  font-size: clamp(30px, 3.4vw, 45px);
-  line-height: 1.08;
-  font-weight: 850;
+  font-size: clamp(28px, 3.2vw, 43px);
+  font-weight: 800;
+  line-height: 1.1;
+  overflow-wrap: break-word;
 }
 
 .cys-texto p {
   max-width: 420px;
-  margin: 0 0 18px;
-  color: rgba(255, 255, 255, 0.84);
-  font-size: 14px;
+  margin: 0 0 20px;
+  color: var(--cys-blanco);
+  font-size: 15px;
   line-height: 1.7;
+  overflow-wrap: break-word;
 }
 
-/* Botón del banner */
+/* Botón principal */
 
 .cys-boton {
   display: inline-flex;
   align-items: center;
-  gap: 13px;
+  justify-content: center;
+  gap: 15px;
+  max-width: 100%;
   padding: 10px 17px;
   border: 1.5px solid var(--cys-dorado);
-  border-radius: 5px;
+  border-radius: 4px;
   color: var(--cys-blanco);
+  text-decoration: none;
   font-size: 13px;
   font-weight: 700;
-  text-decoration: none;
   transition:
     background 0.3s ease,
     color 0.3s ease;
 }
 
+.cys-boton span,
 .cys-boton svg {
   color: var(--cys-dorado);
-  transition: transform 0.3s ease;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 .cys-boton:hover {
@@ -217,28 +230,35 @@
   color: var(--cys-marron);
 }
 
+.cys-boton:hover span,
 .cys-boton:hover svg {
   color: var(--cys-marron);
-  transform: translate(3px, -3px);
 }
 
-/* Texto decorativo */
+.cys-boton:focus-visible,
+.cys-flecha:focus-visible,
+.cys-tarjeta a:focus-visible {
+  outline: 3px solid var(--cys-dorado);
+  outline-offset: 4px;
+}
+
+/* Decoración inferior */
 
 .cys-decoracion {
   position: absolute;
   z-index: 3;
-  right: 8%;
+  right: 9%;
   bottom: 5%;
   color: var(--cys-dorado);
-  font-size: clamp(15px, 2vw, 25px);
+  font-size: clamp(20px, 2.5vw, 30px);
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  pointer-events: none;
 }
 
-/* =========================================
-   CONTENIDO PRINCIPAL
-========================================= */
-
+/* =========================================================
+   SECCIÓN DE CONTENIDO Y CURSOS/ÁREAS
+========================================================= */
 .cys-contenido {
   padding: 75px 7% 65px;
   background:
@@ -279,15 +299,15 @@
   line-height: 1.9;
 }
 
-/* =========================================
-   BENEFICIOS TRANSPARENTES
-========================================= */
+/* =========================================================
+   LISTA DE BENEFICIOS
+========================================================= */
 
 .cys-lista-beneficios {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
-  margin-top: 30px;
+  margin-top: 28px;
   text-align: left;
 }
 
@@ -296,13 +316,15 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  min-height: 92px;
-  padding: 17px;
+  min-width: 0;
+  min-height: 90px;
+  padding: 18px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid var(--cys-borde);
-  border-radius: 13px;
-  color: var(--cys-texto);
+  color: #3a2420;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(166, 125, 35, 0.28);
+  border-radius: 14px;
+  cursor: default;
   transition:
     background 0.3s ease,
     border-color 0.3s ease,
@@ -313,8 +335,8 @@
 .cys-beneficio::before {
   content: "";
   position: absolute;
-  left: 0;
   top: 18%;
+  left: 0;
   width: 3px;
   height: 64%;
   background: var(--cys-dorado);
@@ -324,16 +346,16 @@
 }
 
 .cys-beneficio-icono {
-  flex-shrink: 0;
   display: flex;
+  flex: 0 0 46px;
   align-items: center;
   justify-content: center;
-  width: 45px;
-  height: 45px;
-  border: 1px solid rgba(211, 164, 44, 0.25);
-  border-radius: 12px;
+  width: 46px;
+  height: 46px;
   color: #a57909;
   background: rgba(211, 164, 44, 0.1);
+  border: 1px solid rgba(211, 164, 44, 0.25);
+  border-radius: 12px;
   transition:
     color 0.3s ease,
     background 0.3s ease,
@@ -341,16 +363,17 @@
 }
 
 .cys-beneficio-texto {
-  flex: 1;
+  flex: 1 1 auto;
   min-width: 0;
   color: #554441;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
 .cys-beneficio-flecha {
-  flex-shrink: 0;
+  flex: 0 0 auto;
   color: #b18a29;
   opacity: 0.65;
   transition:
@@ -359,10 +382,10 @@
 }
 
 .cys-beneficio:hover {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.96);
   border-color: #c49a34;
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(39, 3, 3, 0.07);
+  box-shadow: 0 12px 28px rgba(39, 3, 3, 0.08);
 }
 
 .cys-beneficio:hover::before {
@@ -370,7 +393,7 @@
 }
 
 .cys-beneficio:hover .cys-beneficio-icono {
-  color: #ffffff;
+  color: var(--cys-blanco);
   background: var(--cys-marron-claro);
   transform: scale(1.05);
 }
@@ -598,13 +621,13 @@
   background: transparent;
 }
 
-/* =========================================
-   TABLETS Y PANTALLAS MEDIANAS
-========================================= */
+/* =========================================================
+   LAPTOPS Y TABLETS GRANDES
+========================================================= */
 
 @media (min-width: 601px) and (max-width: 900px) {
   .cys-hero {
-    min-height: 420px;
+    min-height: 440px;
     padding: 35px 5%;
   }
 
@@ -626,14 +649,13 @@
   .cys-flecha {
     width: 62%;
     max-width: 110px;
-    height: 38px;
+    min-height: 38px;
   }
 
   .cys-logo-marco {
     top: 5%;
-    right: 5%;
-    width: 39%;
-    max-width: 300px;
+    right: 6%;
+    width: min(34%, 270px);
     padding: 5px;
     border-width: 4px;
     box-shadow: 0 8px 0 var(--cys-marron-claro);
@@ -642,7 +664,7 @@
   .cys-texto {
     width: 58%;
     max-width: 440px;
-    margin-top: 150px;
+    margin-top: 145px;
   }
 
   .cys-texto h1 {
@@ -657,15 +679,11 @@
   .cys-decoracion {
     right: 6%;
     bottom: 4%;
-    font-size: 20px;
+    font-size: 22px;
   }
 
-  .cys-contenido {
-    padding: 55px 5%;
-  }
-
-  .cys-intro {
-    margin-bottom: 48px;
+  .cys-cursos {
+    padding: 42px 5%;
   }
 
   .cys-lista-beneficios {
@@ -675,6 +693,12 @@
   .cys-beneficio {
     padding: 14px;
     gap: 10px;
+  }
+
+  .cys-beneficio-icono {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
   }
 
   .cys-beneficio-texto {
@@ -689,55 +713,46 @@
   .cys-tarjeta {
     padding: 22px;
   }
-
-  .cys-llamado {
-    flex-wrap: wrap;
-    gap: 18px;
-    padding: 25px;
-  }
-
-  .cys-llamado-texto {
-    flex: 1 1 calc(100% - 90px);
-  }
-
-  .cys-llamado-boton {
-    margin-left: 80px;
-  }
 }
 
-/* =========================================
+/* =========================================================
    CELULARES
-========================================= */
+========================================================= */
 
 @media (max-width: 600px) {
   .cys-hero {
     min-height: 0;
-    display: flex;
+    height: auto;
     flex-direction: column;
     align-items: stretch;
-    padding: 0 20px 38px;
+    padding: 0 20px 42px;
   }
 
   .cys-fondo {
-    inset: 185px 0 0;
+    inset: 180px 0 0;
   }
 
   .cys-lateral {
-    top: 20px;
+    top: 18px;
     left: 0;
     width: 27%;
-    height: 145px;
-    border-radius: 0 0 45px 0;
+    height: 135px;
+    border-radius: 0 0 35px 0;
   }
 
   .cys-lateral h2 {
-    font-size: clamp(34px, 10vw, 48px);
+    font-size: clamp(32px, 10vw, 45px);
   }
 
   .cys-flecha {
-    width: 65%;
-    height: 30px;
+    width: 62%;
+    max-width: 75px;
+    min-height: 29px;
     border-width: 1.5px;
+  }
+
+  .cys-flecha span {
+    width: 40%;
   }
 
   .cys-flecha span::after {
@@ -751,7 +766,6 @@
     top: auto;
     right: auto;
     width: min(55%, 210px);
-    aspect-ratio: 1 / 1;
     margin: 20px 0 25px auto;
     padding: 5px;
     border-width: 4px;
@@ -759,13 +773,11 @@
   }
 
   .cys-logo-circulo img {
-    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 50%;
-    transform: translateX(1%);
+    transform: none;
   }
 
   .cys-texto {
@@ -782,138 +794,116 @@
   }
 
   .cys-texto h1 {
-    font-size: clamp(28px, 8vw, 36px);
+    margin-bottom: 12px;
+    font-size: clamp(26px, 7.5vw, 35px);
     line-height: 1.15;
   }
 
   .cys-texto p {
-    font-size: 13px;
+    max-width: 100%;
+    margin-bottom: 18px;
+    font-size: 14px;
     line-height: 1.7;
   }
 
   .cys-boton {
-    max-width: 100%;
-    padding: 10px 14px;
     gap: 10px;
+    padding: 10px 14px;
     font-size: 12px;
   }
 
   .cys-decoracion {
     right: 5%;
-    bottom: 9px;
-    font-size: 12px;
-    letter-spacing: 1px;
+    bottom: 10px;
+    font-size: clamp(14px, 4vw, 18px);
+    letter-spacing: 1.5px;
   }
 
-  .cys-contenido {
-    padding: 42px 20px;
+  .cys-cursos {
+    padding: 38px 18px;
   }
 
-  .cys-intro {
-    margin-bottom: 45px;
+  .cys-cursos-intro {
+    width: 100%;
+    margin-bottom: 28px;
   }
 
   .cys-subtitulo {
     font-size: 9px;
-    letter-spacing: 1.8px;
+    letter-spacing: 1.5px;
   }
 
-  .cys-intro h2,
-  .cys-areas-encabezado h2 {
-    font-size: clamp(27px, 8vw, 34px);
-    letter-spacing: -0.4px;
+  .cys-cursos-intro h2 {
+    font-size: clamp(25px, 7vw, 34px);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
   }
 
-  .cys-descripcion,
-  .cys-areas-encabezado p {
-    font-size: 13px;
-    line-height: 1.75;
+  .cys-descripcion {
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 1.7;
   }
 
   .cys-lista-beneficios {
     grid-template-columns: minmax(0, 1fr);
-    gap: 11px;
-    margin-top: 23px;
+    gap: 10px;
+    margin-top: 22px;
   }
 
   .cys-beneficio {
-    min-height: 78px;
-    padding: 13px;
-    gap: 12px;
+    min-height: 72px;
+    padding: 12px;
+    gap: 11px;
     border-radius: 11px;
   }
 
   .cys-beneficio-icono {
-    width: 41px;
-    height: 41px;
+    flex-basis: 40px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
   }
 
   .cys-beneficio-texto {
-    font-size: 12px;
-    line-height: 1.55;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
   .cys-beneficio-flecha {
-    width: 17px;
-    height: 17px;
-  }
-
-  .cys-areas-encabezado {
-    margin-bottom: 27px;
+    width: 16px;
+    height: 16px;
   }
 
   .cys-tarjetas {
     grid-template-columns: minmax(0, 1fr);
-    gap: 15px;
+    gap: 16px;
   }
 
   .cys-tarjeta {
-    padding: 23px 20px;
+    padding: 22px 18px;
   }
 
-  .cys-tarjeta h3 {
-    font-size: 18px;
+  .cys-numero {
+    margin-bottom: 14px;
+    font-size: 30px;
   }
 
-  .cys-tarjeta p {
-    font-size: 13px;
-    line-height: 1.75;
-  }
-
-  .cys-llamado {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-    margin-top: 45px;
-    padding: 23px 19px;
-    border-radius: 13px;
-  }
-
-  .cys-llamado-icono {
-    width: 52px;
-    height: 52px;
-  }
-
-  .cys-llamado-texto {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .cys-llamado-texto h2 {
+  .cys-tarjeta h2 {
+    margin-bottom: 12px;
     font-size: 22px;
   }
 
-  .cys-llamado-boton {
-    width: 100%;
-    margin-left: 0;
-    padding: 12px;
+  .cys-tarjeta p {
+    margin-bottom: 18px;
+    font-size: 14px;
+    line-height: 1.7;
   }
 }
 
-/* =========================================
+/* =========================================================
    CELULARES MUY PEQUEÑOS
-========================================= */
+========================================================= */
 
 @media (max-width: 360px) {
   .cys-hero {
@@ -930,14 +920,14 @@
   }
 
   .cys-logo-marco {
-    width: min(55%, 175px);
+    width: 125px;
   }
 
   .cys-texto h1 {
-    font-size: 26px;
+    font-size: 25px;
   }
 
-  .cys-contenido {
+  .cys-cursos {
     padding-right: 14px;
     padding-left: 14px;
   }
@@ -948,6 +938,7 @@
   }
 
   .cys-beneficio-icono {
+    flex-basis: 35px;
     width: 35px;
     height: 35px;
   }
@@ -957,17 +948,13 @@
   }
 
   .cys-tarjeta {
-    padding: 19px 15px;
-  }
-
-  .cys-llamado {
-    padding: 20px 15px;
+    padding: 18px 14px;
   }
 }
 
-/* =========================================
+/* =========================================================
    ACCESIBILIDAD Y DISPOSITIVOS TÁCTILES
-========================================= */
+========================================================= */
 
 @media (hover: none) {
   .cys-beneficio:hover,
@@ -975,14 +962,29 @@
     transform: none;
     box-shadow: none;
   }
+
+  .cys-beneficio:hover .cys-beneficio-icono,
+  .cys-beneficio:hover .cys-beneficio-flecha {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pagina-cys *,
-  .pagina-cys *::before,
-  .pagina-cys *::after {
-    scroll-behavior: auto !important;
+  .cys-flecha,
+  .cys-boton,
+  .cys-beneficio,
+  .cys-beneficio::before,
+  .cys-beneficio-icono,
+  .cys-beneficio-flecha,
+  .cys-tarjeta {
     transition: none !important;
     animation: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .cys-beneficio:hover,
+  .cys-tarjeta:hover,
+  .cys-flecha:hover {
+    transform: none;
   }
 }
