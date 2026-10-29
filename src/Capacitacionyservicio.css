@@ -136,9 +136,9 @@
   width: min(36%, 390px);
   aspect-ratio: 1 / 1;
   padding: 7px;
-  border: 6px solid var(--cys-blanco);
+  border: 6px solid #ffffff;
   border-radius: 50%;
-  background: var(--cys-marron-claro);
+  background: var(--cys-blanco);
   box-shadow: 0 12px 0 var(--cys-marron-claro);
 }
 
@@ -147,7 +147,7 @@
   height: 100%;
   overflow: hidden;
   border-radius: 50%;
-  background: var(--cys-marron);
+  
 }
 
 .cys-logo-circulo img {

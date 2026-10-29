@@ -44,7 +44,7 @@ export default function CapacitacionServicio() {
         <div className="cys-logo-marco">
           <div className="cys-logo-circulo">
             <img
-              src={`${import.meta.env.BASE_URL}images/logomarron_comunidad.png`}
+              src={`${import.meta.env.BASE_URL}images/logocomunidad.png`}
               alt="Logo Comunidad 2220"
             />
           </div>
