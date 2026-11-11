@@ -67,6 +67,13 @@ export default function CapacitacionServicio() {
     "https://thumbs-us-east-1.myalbum.io/photo/1k0/bc6879d3-1eb2-427b-8b61-85fcfab18ce8.jpg",
     "https://thumbs-us-east-1.myalbum.io/photo/1k0/fe867236-4560-4c2d-9b5a-640421a990ae.jpg",
     "https://thumbs-us-east-1.myalbum.io/photo/1k0/4c6de4fb-b216-4c91-beec-9d7599a0de6e.jpg",
+    "https://thumbs-us-east-1.myalbum.io/photo/1k0/374b988b-a25e-49d2-a5b1-327cd42169f8.jpg",
+    "https://thumbs-us-east-1.myalbum.io/photo/1k0/019d774a-3045-40de-9acc-a2f267a6dfea.jpg",
+    "https://thumbs-us-east-1.myalbum.io/photo/1k0/74822ec1-c2fe-4845-86e6-f79472fd1518.jpg",
+    "https://thumbs-us-east-1.myalbum.io/photo/1k0/12b0a343-198d-4205-acd8-540ef2ca779a.jpg",
+    "https://thumbs-us-east-1.myalbum.io/photo/1k0/994137d4-f239-4d50-b189-44741a4d1723.jpg",
+    "https://thumbs-us-east-1.myalbum.io/photo/1k0/cd371e39-5fd9-457d-9889-c743703df424.jpg",
+    "https://thumbs-us-east-1.myalbum.io/photo/1k0/9a3da928-d23f-420e-8170-aac84a37b891.jpg",
   ];
 
   // DESCRIPCIONES POR GRUPOS
@@ -101,6 +108,12 @@ export default function CapacitacionServicio() {
       fin: 44,
       texto:
         "En cumplimiento del mandamiento del Señor también realizamos visita al hospital de Yarinacocha. Creemos que las personas están sensibles al evangelio en estos lugares. Además, que es una expresión del amor de Dios también amar al prójimo. El objetivo es que los jóvenes puedan experimentar en la práctica los dones que el Señor les entregó como la compasión, la bondad, el servicio, etc.",
+    },
+    {
+      inicio: 45,
+      fin: 51,
+      texto:
+        "Servimos en la feria misionera organizado por un incondicional amor, donde se acondicionó pequeñas carpas donde se atendía gratuitamente en áreas de salud (triaje), entrega de medicamentos, psicología, corte de cabello, asesoría jurídica, podología, evangelismo personal, show para niños, entre otras cosas. Esta actividad se realizó en la CCNN San Francisco-Yarinacocha.",
     },
   ];
 
@@ -330,10 +343,7 @@ export default function CapacitacionServicio() {
             {/* DESCRIPCIÓN POR GRUPOS */}
 
             <div className="cys-descripcion" key={grupoActualCYS?.titulo}>
-              <span className="cys-descripcion-linea"></span>
-
               <h3>{grupoActualCYS?.titulo}</h3>
-
               <p>{grupoActualCYS?.texto}</p>
             </div>
           </div>

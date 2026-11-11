@@ -1192,8 +1192,8 @@
 /* CONTENEDOR */
 
 .cys-carrusel {
-  width: 100%;
-  max-width: 850px;
+  width: 95%;
+  max-width: 1600px;
   margin: auto;
 }
 
@@ -1201,8 +1201,10 @@
 
 .cys-carrusel-imagen {
   position: relative;
-  width: 100%;
-  height: 450px;
+  width: 95%;
+  max-width: 1600px;
+  height: 550px;
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
   background: #fab402;
@@ -1306,7 +1308,7 @@
 .cys-descripcion {
   max-width: 750px;
   margin: 35px auto 0;
-  padding: 20px;
+  padding: -10px;
   text-align: center;
   animation: cysTextoEntrada .5s ease;
 }
@@ -1343,30 +1345,43 @@
   color: #460600;
   font-size: 16px;
   line-height: 1.8;
+  font-weight: 600;
   margin: 0;
 }
 
 /* TABLETS */
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .cys-galeria {
     padding: 60px 18px;
   }
 
   .cys-carrusel-imagen {
-    height: 350px;
+    width: 97%;
+    height: 500px;
+  }
+  .cys-carrusel {
+    width: 97%;
   }
 }
 
 /* CELULARES */
-
 @media (max-width: 480px) {
+
   .cys-galeria {
     padding: 45px 15px;
   }
 
   .cys-carrusel-imagen {
+    width: 100%;
     height: 280px;
+  }
+
+  .cys-carrusel-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   .cys-flecha-car {
@@ -1385,6 +1400,7 @@
 
   .cys-descripcion {
     padding: 12px 5px;
+    transform: translateY(-40px);
   }
 
   .cys-descripcion h3 {
@@ -1395,11 +1411,31 @@
     font-size: 14px;
     line-height: 1.7;
   }
+
+  /* Indicadores */
+  .cys-indicadores button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    background: #460600;
+    cursor: pointer;
+    transition: width .3s ease;
+  }
+
+  .cys-indicadores button.activo {
+    width: 22px;
+    background: #460600;
+  }
 }
 
+/* ACCESIBILIDAD: REDUCIR ANIMACIONES */
 @media (prefers-reduced-motion: reduce) {
+
   .cys-carrusel-imagen img,
   .cys-descripcion {
-    animation: none;
+    animation: none !important;
+    transition: none !important;
   }
 }

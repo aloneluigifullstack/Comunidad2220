@@ -50,7 +50,7 @@ export default function FormacionTeologica() {
       texto:
         "Impulsamos el aprendizaje del método hermenéutico para el estudio de la biblia (estudio bíblico inductivo). Nuestro objetivo fue que los jóvenes puedan tener herramientas para escudriñar las escrituras de una manera seria y profunda, así formar su carácter en la palabra de Dios",
     },
-     {
+    {
       inicio: 12,
       fin: 14,
       texto:
@@ -274,10 +274,7 @@ export default function FormacionTeologica() {
             {/* DESCRIPCIÓN DINÁMICA POR GRUPOS */}
 
             <div className="ft-descripcion" key={grupoActual?.titulo}>
-              <span className="ft-descripcion-linea"></span>
-
               <h3>{grupoActual?.titulo}</h3>
-
               <p>{grupoActual?.texto}</p>
             </div>
           </div>

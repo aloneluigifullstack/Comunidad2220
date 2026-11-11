@@ -876,8 +876,8 @@
 /* CONTENEDOR DEL CARRUSEL */
 
 .ft-carrusel {
-  width: 100%;
-  max-width: 850px;
+  width: 95%;
+  max-width: 1600px;
   margin: auto;
 }
 
@@ -885,8 +885,10 @@
 
 .ft-carrusel-imagen {
   position: relative;
-  width: 100%;
-  height: 450px;
+  width: 95%;
+  max-width: 1600px;
+  height: 550px;
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
   background: #160c09;
@@ -988,7 +990,7 @@
 .ft-descripcion {
   max-width: 750px;
   margin: 35px auto 0;
-  padding: 20px;
+  padding: -10px;
   text-align: center;
   animation: ftTextoEntrada .5s ease;
 }
@@ -1026,17 +1028,22 @@
   font-size: 16px;
   line-height: 1.8;
   margin: 0;
+  font-weight: 600;
 }
 
 /* TABLETS */
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .ft-galeria {
     padding: 60px 18px;
   }
 
   .ft-carrusel-imagen {
-    height: 350px;
+    width: 97%;
+    height: 500px;
+  }
+  .ft-carrusel{
+    width: 97%;
   }
 }
 
@@ -1067,6 +1074,7 @@
 
   .ft-descripcion {
     padding: 12px 5px;
+    transform: translateY(-40px);
   }
 
   .ft-descripcion h3 {
