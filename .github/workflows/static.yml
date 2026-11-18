@@ -21,6 +21,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
 
     steps:
@@ -39,11 +40,15 @@ jobs:
       - name: Compilar proyecto React
         run: npm run build
 
-      - name: Preparar GitHub Pages
-        uses: actions/configure-pages@v5
+      - name: Verificar dominio personalizado
+        run: |
+          echo "comunidad2220.org" > dist/CNAME
 
       - name: Preparar rutas directas de React Router
         run: cp dist/index.html dist/404.html
+
+      - name: Preparar GitHub Pages
+        uses: actions/configure-pages@v5
 
       - name: Subir archivos compilados
         uses: actions/upload-pages-artifact@v3
@@ -53,4 +58,3 @@ jobs:
       - name: Publicar sitio web
         id: deployment
         uses: actions/deploy-pages@v4
-
