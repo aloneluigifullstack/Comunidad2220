@@ -21,7 +21,7 @@ const areas = [
     titulo: "Capacitación y servicio",
     descripcion:
       "Desarrolla tus talentos y sé parte del cambio en tu entorno.",
-    imagen: `${import.meta.env.BASE_URL}/images/cys_logo.png`,
+    imagen: `${import.meta.env.BASE_URL}images/cys_logo.png`,
     icono: <FaUsers />,
     enlace: `${import.meta.env.BASE_URL}capacitacion-servicio`,
   },
@@ -30,7 +30,7 @@ const areas = [
     titulo: "Banda Comunidad",
     descripcion:
       "Música, adoración y una misión que nos une.",
-    imagen: `${import.meta.env.BASE_URL}/images/bc_logo.png`,
+    imagen: `${import.meta.env.BASE_URL}images/bc_logo.png`,
     icono: <FaMusic />,
     enlace: `${import.meta.env.BASE_URL}banda-comunidad`,
   },
